@@ -13,7 +13,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowSpiral(false);
-    }, 10000);
+    }, 15000);
     return () => clearTimeout(timer);
   }, []);
 
