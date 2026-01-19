@@ -124,7 +124,7 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
 		console.log('Particle color (first particle):', colors[0], colors[1], colors[2]);
 
 		let count = 0;
-		let animationId: number;
+		let animationId: number = 0;
 
 		// Animation function
 		const animate = () => {
