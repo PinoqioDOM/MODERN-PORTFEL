@@ -8,7 +8,8 @@ import React, {
   RefObject,
   useEffect,
   useMemo,
-  useRef
+  useRef,
+  useState
 } from 'react';
 import gsap from 'gsap';
 
@@ -78,6 +79,28 @@ const CardSwap: React.FC<CardSwapProps> = ({
   easing = 'elastic',
   children
 }) => {
+  const [dimensions, setDimensions] = useState({ width, height });
+
+  useEffect(() => {
+    const updateDimensions = () => {
+      if (window.innerWidth < 480) {
+        setDimensions({ width: 280, height: 200 });
+      } else if (window.innerWidth < 640) {
+        setDimensions({ width: 350, height: 250 });
+      } else if (window.innerWidth < 768) {
+        setDimensions({ width: 450, height: 300 });
+      } else if (window.innerWidth < 1024) {
+        setDimensions({ width: 600, height: 350 });
+      } else {
+        setDimensions({ width: 800, height: 400 });
+      }
+    };
+
+    updateDimensions();
+    window.addEventListener('resize', updateDimensions);
+    return () => window.removeEventListener('resize', updateDimensions);
+  }, []);
+
   const config =
     easing === 'elastic'
       ? {
@@ -197,7 +220,7 @@ const CardSwap: React.FC<CardSwapProps> = ({
       ? cloneElement(child, {
           key: i,
           ref: refs[i],
-          style: { width, height, ...(child.props.style ?? {}) },
+          style: { width: dimensions.width, height: dimensions.height, ...(child.props.style ?? {}) },
           onClick: e => {
             child.props.onClick?.(e as React.MouseEvent<HTMLDivElement>);
             onCardClick?.(i);
@@ -209,8 +232,8 @@ const CardSwap: React.FC<CardSwapProps> = ({
   return (
     <div
       ref={container}
-      className="absolute bottom-0 right-0 transform translate-x-[5%] translate-y-[20%] origin-bottom-right perspective-[900px] overflow-visible max-[768px]:translate-x-[25%] max-[768px]:translate-y-[25%] max-[768px]:scale-[0.75] max-[480px]:translate-x-[25%] max-[480px]:translate-y-[25%] max-[480px]:scale-[0.55]"
-      style={{ width, height }}
+      className="absolute bottom-0 right-0 translate-x-[5%] translate-y-[10%] origin-bottom-right perspective-[900px] overflow-visible max-[480px]:right-1/2 max-[480px]:translate-x-1/2 max-[480px]:translate-y-[5%] max-[640px]:right-1/2 max-[640px]:translate-x-1/2 max-[640px]:translate-y-[8%] sm:right-0 sm:translate-x-[10%] md:translate-x-[8%] lg:translate-x-[6%] xl:translate-x-[5%]"
+      style={{ width: dimensions.width, height: dimensions.height }}
     >
       {rendered}
     </div>

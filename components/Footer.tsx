@@ -12,9 +12,9 @@ const textItems = [
 ];
 
 const CvText = [
-  { node: <span className="font-extrabold text-white">DOWNLOAD REQUIRED</span>, title: "Let's Work Together!" },
-  { node: <span className="font-extrabold text-white">DOWNLOAD REQUIRED</span>, title: "Let's Work Together!" },
-  { node: <span className="font-extrabold text-white">DOWNLOAD REQUIRED</span>, title: "Let's Work Together!" },
+  { node: <span className="font-extrabold text-white">DOWNLOAD</span>, title: "DOWNLOAD!" },
+  { node: <span className="font-extrabold text-white">DOWNLOAD</span>, title: "DOWNLOAD!" },
+  { node: <span className="font-extrabold text-white">DOWNLOAD</span>, title: "DOWNLOAD!" },
 ];
 
 export default function Footer() {
@@ -65,7 +65,9 @@ export default function Footer() {
               'blur-[30px]',
             )}
           />
-          <h1 className="relative font-sans text-4xl md:text-9xl font-extrabold text-white tracking-widest hover:scale-300  hover:text-shadow-lg hover:text-shadow-sky-300 duration-500 cursor-pointer">
+          <h1 
+            className="relative font-sans text-4xl md:text-9xl font-extrabold text-white tracking-widest text-shadow-lg text-shadow-sky-300
+            hover:scale-300  hover:text-shadow-lg hover:text-shadow-sky-300 duration-500 cursor-pointer">
             CV
           </h1>
         </div>

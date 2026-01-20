@@ -54,8 +54,8 @@ export default function Projects() {
     ];
 
     return (
-        <div style={{ height: '750px', position: 'relative' }} className='text-white'>
-            <h1 className='font-extrabold text-9xl text-left p-8'>PROJECTS</h1>
+        <div className='text-white relative min-h-[600px] sm:min-h-[700px] md:min-h-[800px] lg:min-h-[900px] xl:h-[750px] py-8 sm:py-12 md:py-16'>
+            <h1 className='font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-left px-4 sm:px-6 md:px-8 mb-8 sm:mb-12'>PROJECTS</h1>
             <CardSwap
                 cardDistance={10}
                 verticalDistance={45}
@@ -82,11 +82,11 @@ export default function Projects() {
                             
                             <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors z-10" />
                             
-                            <div className="relative z-20 flex flex-col justify-center items-center h-full p-6 text-center">
-                                <h3 className="text-3xl font-bold text-white mb-2">
+                            <div className="relative z-20 flex flex-col justify-center items-center h-full p-3 sm:p-4 md:p-6 text-center">
+                                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1 sm:mb-2">
                                     {project.title}
                                 </h3>
-                                <p className="text-gray-200">
+                                <p className="text-xs sm:text-sm md:text-base text-gray-200">
                                     {project.description}
                                 </p>
                             </div>

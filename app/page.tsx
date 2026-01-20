@@ -30,13 +30,8 @@ export default function Home() {
               { label: "CONTACT", href: "#contact" }
             ]}
             mainText="TORNIKE ALKHANISHVILI"
-            readMoreLink="FRONTEND DEVELOPER"
             imageSrc="./1.png"
             imageAlt="Fashion model"
-            overlayText={{
-              part1:"SEEK",
-              part2: "NEXT"
-            }}
             socialLinks={[
               { icon: Instagram, href: "https://instagram.com" },
               { icon: Twitter, href: "https://twitter.com" },

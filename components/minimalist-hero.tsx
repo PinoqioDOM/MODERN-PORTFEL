@@ -9,13 +9,8 @@ interface MinimalistHeroProps {
   logoText: string;
   navLinks: { label: string; href: string }[];
   mainText: string;
-  readMoreLink: string;
   imageSrc: string;
   imageAlt: string;
-  overlayText: {
-    part1: string;
-    part2: string;
-  };
   socialLinks: { icon: LucideIcon; href: string }[];
   locationText: string;
   className?: string;
@@ -58,7 +53,6 @@ export const MinimalistHero = ({
   mainText,
   imageSrc,
   imageAlt,
-  overlayText,
   socialLinks,
   locationText,
   className,
@@ -110,7 +104,6 @@ export const MinimalistHero = ({
           className="z-20 order-2 md:order-1 text-center md:text-left"
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-relaxed md:mx-0 font-extrabold">{mainText}</h1>
-          <p className='text-white text-sm sm:text-base lg:text-xl tracking-wider sm:tracking-widest font-extrabold mt-2'>FRONTEND DEVELOPER</p>
         </motion.div>
 
         {/* Center Image with Circle */}
@@ -143,11 +136,7 @@ export const MinimalistHero = ({
           transition={{ duration: 0.6, delay: 1.2 }}
           className="z-20 order-3 flex items-center justify-center text-center md:justify-start"
         >
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold text-white leading-tight">
-            {overlayText.part1}
-            <br />
-            {overlayText.part2}
-          </h1>
+          <p className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-relaxed md:mx-0 font-extrabold'>FRONT-END DEVELOPER</p>
         </motion.div>
       </div>
 
