@@ -30,26 +30,14 @@ const techLogos = [
   { node: <SiCss3 />, title: "CSS3"},
 ];
 
-// Helper component for navigation links
-const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-  <a
-    href={href}
-    className="text-sm font-medium tracking-widest transition-colors"
-  >
-    {children}
-  </a>
-);
-
 // Helper component for social media icons
 const SocialIcon = ({ href, icon: Icon }: { href: string; icon: LucideIcon }) => (
-  <a href={href} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-yellow-400">
-    <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
+  <a href={href} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-sky-400 hover:scale-110   duration-300">
+    <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
   </a>
 );  
 
 export const MinimalistHero = ({
-  logoText,
-  navLinks,
   mainText,
   imageSrc,
   imageAlt,
@@ -65,21 +53,26 @@ export const MinimalistHero = ({
       )}
     >
       {/* Header */}
-      <header className="z-30 flex w-full p-4 sm:p-6 lg:p-8 items-center justify-between">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="sm:text-lg lg:text-xl font-bold tracking-wider hover:text-shadow-lg hover:text-shadow-sky-400 hover:scale-120 cursor-pointer duration-300"
-        >
-          {logoText}
-        </motion.div>
-        <div className="hidden items-center text-white font-extrabold space-x-4 lg:space-x-8 md:flex hover:text-shadow-lg hover:text-shadow-sky-400 hover:scale-120 cursor-pointer duration-300">
-          {navLinks.map((link) => (
-            <NavLink key={link.label} href={link.href}>
-              {link.label}
-            </NavLink>
-          ))}
+      <header className="z-30 flex w-full py-4 items-center justify-between">
+        <div className="flex w-full items-end justify-between px-4 sm:px-6 lg:px-8 mb-2 sm:mb-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.2 }}
+            className="flex items-center font-bold space-x-3 sm:space-x-4"
+          >
+            {socialLinks.map((link, index) => (
+              <SocialIcon key={index} href={link.href} icon={link.icon} />
+            ))}
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.3 }}
+            className="text-base sm:text-lg font-bold hover:text-sky-400 hover:scale-105 duration-300 cursor-pointer"
+          >
+            {locationText}
+          </motion.div>
         </div>
       </header>
 
@@ -123,37 +116,17 @@ export const MinimalistHero = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.2 }}
-          className="z-20 order-3 flex items-center justify-center text-center md:justify-start"
+          className="z-20 order-3 flex flex-col items-center justify-center text-center md:justify-start"
         >
-          <p className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-relaxed md:mx-0 font-extrabold text-shadow-lg text-shadow-sky-300'>FRONT-END DEVELOPER</p>
+          <p className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-relaxed md:mx-0 font-extrabold text-shadow-lg text-shadow-sky-300 tracking-wider'>FRONTEND</p>
+          <p className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-relaxed md:mx-0 font-extrabold text-shadow-lg text-shadow-sky-300 tracking-widest'>DEVELOPER</p>
         </motion.div>
       </div>
 
       {/* Footer Elements */}
       <footer className="z-30 w-full pb-2 sm:pb-4">
-        <div className="flex w-full items-end justify-between px-4 sm:px-6 lg:px-8 mb-2 sm:mb-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1.2 }}
-            className="flex items-center font-bold space-x-3 sm:space-x-4"
-          >
-            {socialLinks.map((link, index) => (
-              <SocialIcon key={index} href={link.href} icon={link.icon} />
-            ))}
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1.3 }}
-            className="text-xs sm:text-sm font-bold"
-          >
-            {locationText}
-          </motion.div>
-        </div>
-        
         {/* Logo Loop Container - Fixed positioning */}
-        <div className="w-full relative h-[30px] sm:h-[40px] lg:h-[60px] overflow-hidden cursor-pointer ">
+        <div className="w-full relative h-[50px] sm:h-[40px] lg:h-[60px] overflow-hidden cursor-pointer ">
           <LogoLoop
             logos={techLogos}
             speed={120}

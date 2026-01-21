@@ -17,6 +17,24 @@ const CvText = [
   { node: <span className="font-extrabold text-white">DOWNLOAD</span>, title: "DOWNLOAD!" },
 ];
 
+  const handleCvDownload = () => {
+    const cvFiles = [
+      { url: '/English.pdf', name: 'CV_English.pdf' },
+      { url: '/Georgian.pdf', name: 'CV_Georgian.pdf' }
+    ];
+
+    cvFiles.forEach((file, index) => {
+      setTimeout(() => {
+        const link = document.createElement('a');
+        link.href = file.url;
+        link.download = file.name;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }, index * 100);
+    });
+  };
+
 export default function Footer() {
   return (
     <section className="relative w-full h-screen overflow-hidden bg-black">
@@ -66,8 +84,9 @@ export default function Footer() {
             )}
           />
           <h1 
-            className="relative font-sans text-4xl md:text-9xl font-extrabold text-white tracking-widest text-shadow-lg text-shadow-sky-300
-            hover:scale-300  hover:text-shadow-lg hover:text-shadow-sky-400  duration-500 cursor-pointer">
+            onClick={handleCvDownload}
+            className="relative font-sans text-9xl md:text-9xl font-extrabold text-white tracking-widest text-shadow-lg text-shadow-sky-300
+            hover:scale-300 hover:text-shadow-lg hover:text-shadow-sky-400  duration-500 cursor-pointer">
             CV
           </h1>
         </div>
