@@ -34,7 +34,7 @@ const techLogos = [
 const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
   <a
     href={href}
-    className="text-sm font-medium tracking-widest transition-colors hover:text-yellow-400"
+    className="text-sm font-medium tracking-widest transition-colors"
   >
     {children}
   </a>
@@ -70,28 +70,17 @@ export const MinimalistHero = ({
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-base sm:text-lg lg:text-xl font-bold tracking-wider"
+          className="sm:text-lg lg:text-xl font-bold tracking-wider hover:text-shadow-lg hover:text-shadow-sky-400 hover:scale-120 cursor-pointer duration-300"
         >
           {logoText}
         </motion.div>
-        <div className="hidden items-center text-white font-extrabold space-x-4 lg:space-x-8 md:flex">
+        <div className="hidden items-center text-white font-extrabold space-x-4 lg:space-x-8 md:flex hover:text-shadow-lg hover:text-shadow-sky-400 hover:scale-120 cursor-pointer duration-300">
           {navLinks.map((link) => (
             <NavLink key={link.label} href={link.href}>
               {link.label}
             </NavLink>
           ))}
         </div>
-        <motion.button
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col space-y-1.5 md:hidden"
-          aria-label="Open menu"
-        >
-          <span className="block h-0.5 w-6 bg-foreground"></span>
-          <span className="block h-0.5 w-6 bg-foreground"></span>
-          <span className="block h-0.5 w-5 bg-foreground"></span>
-        </motion.button>
       </header>
 
       {/* Main Content Area */}
@@ -103,7 +92,7 @@ export const MinimalistHero = ({
           transition={{ duration: 0.6, delay: 1 }}
           className="z-20 order-2 md:order-1 text-center md:text-left"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-relaxed md:mx-0 font-extrabold">{mainText}</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-relaxed md:mx-0 font-extrabold text-shadow-lg text-shadow-sky-300">{mainText}</h1>
         </motion.div>
 
         {/* Center Image with Circle */}
@@ -136,7 +125,7 @@ export const MinimalistHero = ({
           transition={{ duration: 0.6, delay: 1.2 }}
           className="z-20 order-3 flex items-center justify-center text-center md:justify-start"
         >
-          <p className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-relaxed md:mx-0 font-extrabold'>FRONT-END DEVELOPER</p>
+          <p className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-relaxed md:mx-0 font-extrabold text-shadow-lg text-shadow-sky-300'>FRONT-END DEVELOPER</p>
         </motion.div>
       </div>
 
@@ -164,7 +153,7 @@ export const MinimalistHero = ({
         </div>
         
         {/* Logo Loop Container - Fixed positioning */}
-        <div className="w-full relative h-[30px] sm:h-[40px] lg:h-[60px] overflow-hidden">
+        <div className="w-full relative h-[30px] sm:h-[40px] lg:h-[60px] overflow-hidden cursor-pointer ">
           <LogoLoop
             logos={techLogos}
             speed={120}

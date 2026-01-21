@@ -55,7 +55,7 @@ export default function Projects() {
 
     return (
         <div className='text-white relative min-h-[600px] sm:min-h-[700px] md:min-h-[800px] lg:min-h-[900px] xl:h-[750px] py-8 sm:py-12 md:py-16'>
-            <h1 className='font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-left px-4 sm:px-6 md:px-8 mb-8 sm:mb-12'>PROJECTS</h1>
+            <h1 className='font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-left px-4 sm:px-6 md:px-8 mb-8 sm:mb-12 text-shadow-lg text-shadow-sky-300 hover:scale-105 hover:text-shadow-sky-400 duration-500 cursor-poiter'>PROJECTS</h1>
             <CardSwap
                 cardDistance={10}
                 verticalDistance={45}

@@ -67,7 +67,7 @@ export default function Footer() {
           />
           <h1 
             className="relative font-sans text-4xl md:text-9xl font-extrabold text-white tracking-widest text-shadow-lg text-shadow-sky-300
-            hover:scale-300  hover:text-shadow-lg hover:text-shadow-sky-300 duration-500 cursor-pointer">
+            hover:scale-300  hover:text-shadow-lg hover:text-shadow-sky-400  duration-500 cursor-pointer">
             CV
           </h1>
         </div>
