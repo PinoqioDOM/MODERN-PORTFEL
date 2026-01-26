@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { SpiralAnimation } from "@/components/ui/spiral-animation"; 
 import { MinimalistHero } from "@/components/minimalist-hero";
-import { Instagram, Twitter, Facebook } from "lucide-react";
+import { Instagram, Twitter, Facebook, Github, Linkedin, Mail } from "lucide-react";
 import Projects from "@/components/Projects";
 import Footer from "@/components/Footer";
 
@@ -33,9 +33,9 @@ export default function Home() {
             imageSrc="./1.png"
             imageAlt="Fashion model"
             socialLinks={[
-              { icon: Instagram, href: "https://instagram.com" },
-              { icon: Twitter, href: "https://twitter.com" },
-              { icon: Facebook, href: "https://facebook.com" }
+              { icon: Github, href: "https://github.com/PinoqioDOM" },
+              { icon: Linkedin, href: "httpswww.linkedin.com/in/tornike-alxanishvili-58485b318" },
+              { icon: Mail, href: "mailto:alkhanishvilit@gmail.com" }
             ]}
             locationText="Tbilisi, Georgia"
           />

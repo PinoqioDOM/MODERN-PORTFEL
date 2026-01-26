@@ -116,10 +116,10 @@ export const MinimalistHero = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.2 }}
-          className="z-20 order-3 flex flex-col items-center justify-center text-center md:justify-start"
+          className="z-20 order-3 flex flex-row md:flex-col items-center justify-center text-center md:justify-start space-x-2 md:space-x-0 md:space-y-1"
         >
-          <p className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-relaxed md:mx-0 font-extrabold text-shadow-lg text-shadow-sky-300 tracking-wider'>FRONTEND</p>
-          <p className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-relaxed md:mx-0 font-extrabold text-shadow-lg text-shadow-sky-300 tracking-widest'>DEVELOPER</p>
+          <p className='text-sm sm:text-2xl md:text-4xl lg:text-6xl font-extrabold text-white tracking-widest md:text-shadow-lg md:text-shadow-sky-300 lg:mb-5'>FRONTEND</p>
+          <p className='text-sm sm:text-2xl md:text-4xl lg:text-6xl font-extrabold text-white tracking-widest md:text-shadow-lg md:text-shadow-sky-300'>DEVELOPER</p>
         </motion.div>
       </div>
 
